@@ -10,3 +10,6 @@
 # Mopidy-Dirble ~= 1.1        # Compatible release. Same as >= 1.1, == 1.*
 #
 # Obviously removing "# "
+
+pysqlite3>=0.4.3
+datetime>=4.3
