@@ -6,21 +6,24 @@ import sqlite3
 from datetime import datetime
 
 __author__ = "help@castellanidavide.it"
-__version__ = "01.01 2020-10-04"
+__version__ = "01.03 2020-10-15"
 
 class usb:
-	def __init__ (self, debug=False, db=True, vs=False):
+	def __init__ (self, debug=False, db=True, vs=False, folder=None):
 		"""Where it all begins
 		"""
 		base_dir = "." if vs else ".." # the project "root" in Visual studio it is different
 
+		if folder == None:
+			folder = os.path.join(base_dir, "flussi")
+
 		log = open(os.path.join(base_dir, "log", "trace.log"), "a+")
-		csv_temp = open(os.path.join(base_dir, "flussi", "temp.csv"), "r+")
-		csv_usb_last = open(os.path.join(base_dir, "flussi", "usb.csv"), "r+").read()
-		csv_usb = open(os.path.join(base_dir, "flussi", "usb.csv"), "w+")
-		last_user_last = open(os.path.join(base_dir, "flussi", "lastUser.txt"), "r+").read()
-		last_user = open(os.path.join(base_dir, "flussi", "lastUser.txt"), "w+")
-		if db : db_usb = sqlite3.connect(os.path.join(base_dir, "flussi", "usb.db"))
+		csv_temp = open(os.path.join(folder, "temp.csv"), "r+")
+		csv_usb_last = open(os.path.join(folder, "usb.csv"), "r+").read()
+		csv_usb = open(os.path.join(folder, "usb.csv"), "w+")
+		last_user_last = open(os.path.join(folder, "lastUser.txt"), "r+").read()
+		last_user = open(os.path.join(folder, "lastUser.txt"), "w+")
+		if db : db_usb = sqlite3.connect(os.path.join(folder, "usb.db"))
 		
 		usb.log(log, f"Opened all files{' and database connected' if db else ' opened'}")
 		
@@ -193,4 +196,10 @@ if __name__ == "__main__":
 		debug = False
 		vs = False
 
-	usb(debug, db, vs)
+	# select folder
+	folder = None
+	for arg in sys.argv:
+		if "--folder=" in arg or "-f=" in arg:
+			folder = arg.replace("--folder=", "").replace("-f=", "")
+
+	usb(debug, db, vs, folder)

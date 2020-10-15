@@ -1,5 +1,5 @@
 # usb
-[![GitHub license](https://img.shields.io/badge/licence-GNU-green?style=flat)](https://github.com/CastellaniDavide/cpp-usb/blob/master/LICENSE) ![Author](https://img.shields.io/badge/author-Castellani%20Davide-green?style=flat) ![Version](https://img.shields.io/badge/version-v01.01-blue?style=flat) ![Language Batch, Python](https://img.shields.io/badge/language-Batch,%20Python-yellowgreen?style=flat) ![sys.platform supported](https://img.shields.io/badge/OS%20platform%20supported-Linux,%20Windows%20&%20Mac%20OS-blue?style=flat) [![On GitHub](https://img.shields.io/badge/on%20GitHub-True-green?style=flat&logo=github)](https://github.com/CastellaniDavide/usb)
+[![GitHub license](https://img.shields.io/badge/licence-GNU-green?style=flat)](https://github.com/CastellaniDavide/cpp-usb/blob/master/LICENSE) ![Author](https://img.shields.io/badge/author-Castellani%20Davide-green?style=flat) ![Version](https://img.shields.io/badge/version-v01.03-blue?style=flat) ![Language Batch, Python](https://img.shields.io/badge/language-Batch,%20Python-yellowgreen?style=flat) ![sys.platform supported](https://img.shields.io/badge/OS%20platform%20supported-Linux,%20Windows%20&%20Mac%20OS-blue?style=flat) [![On GitHub](https://img.shields.io/badge/on%20GitHub-True-green?style=flat&logo=github)](https://github.com/CastellaniDavide/usb)
 
 ## Tags
  #python3, #bat, #batch, #chocolatey, #usb, #windows-10, #task-scheduler, #setup, #csv, #database, #log
@@ -23,6 +23,7 @@ You can see the project website here [https://castellanidavide.github.io/usb/](h
  - [x] Create a guide setup
  - [x] Create a setup file
  - [x] Add website
+ - [x] Paramized (output) folder variable
 
 ## Required/ Setup
  - python3 & pip3 packages & task scheduler & ...
@@ -41,7 +42,7 @@ You can see the project website here [https://castellanidavide.github.io/usb/](h
    - usb.bat <- for debugging
    - usb.py
    - USBDview.exe
- - docs
+ - docs or doc
    - _config.yml
    - funcionality.png
    - LICENSE
@@ -61,9 +62,17 @@ You can see the project website here [https://castellanidavide.github.io/usb/](h
  - ./usb.bat
 
 # Changelog
- - [Version_1.0_2020-10-04](#Version_10_2020-10-04)
+ - [Version_01.03_2020-10-15](#Version_0103_2020-10-15)
+ - [Version_01.02_2020-10-09](#Version_0102_2020-10-09)
+ - [Version_01.01_2020-10-04](#Version_0101_2020-10-04)
 
-## Version_1.0_2020-10-04
+## Version 01.03 2020-10-15
+ - Fixed a bug
+
+## Version 01.02 2020-10-09
+ - Paramized (output) folder variable
+
+## Version_01.01_2020-10-04
  - Get csv USBDview.exe output and save in temp.csv (bat)
  - Call usb.py by bat
  - Filter the temp.csv file
